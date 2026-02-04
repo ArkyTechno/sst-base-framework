@@ -41,3 +41,44 @@ npm run deploy
 - `src/infra`: infrastructure and route registration
 - `src/platform`: shared platform utilities (DB, HTTP, logging)
 - `src/services`: domain services and handlers
+
+## SST Useful Commands
+
+### Manage Secrets
+
+```sh
+# Set a secret (prompted)
+npx sst secrets set MONGODB_URI
+
+# Set a secret with value
+npx sst secrets set MONGODB_URI "mongodb+srv://user:pass@host/db"
+
+# List secrets
+npx sst secrets list
+
+# Remove a secret
+npx sst secrets remove MONGODB_URI
+```
+
+### Environment & Stacks
+
+```sh
+# Start dev environment
+npx sst dev
+
+# Deploy to default stage
+npx sst deploy
+
+# Deploy to a specific stage
+npx sst deploy --stage prod
+
+# Remove a stage
+npx sst remove --stage prod
+```
+
+### Logs
+
+```sh
+# Tail function logs
+npx sst logs
+```
