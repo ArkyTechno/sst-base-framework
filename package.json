@@ -1,0 +1,22 @@
+{
+  "name": "paynwise-app",
+  "type": "module",
+  "scripts": {
+    "build": "esbuild --bundle --outfile=./dist/index.js --platform=node --target=node20 ./src/index.ts",
+    "deploy": "run-s build zip update",
+    "update": "aws lambda update-function-code --zip-file fileb://lambda.zip --function-name hello",
+    "zip": "zip -j lambda.zip dist/index.js",
+    "dev": "sst dev",
+    "start": "sst start"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "8.10.159",
+    "esbuild": "^0.27.2",
+    "npm-run-all2": "^6.2.0"
+  },
+  "dependencies": {
+    "hono": "^4.11.7",
+    "mongoose": "^8.21.0",
+    "sst": "^3.9.28"
+  }
+}
