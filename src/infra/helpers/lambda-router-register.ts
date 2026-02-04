@@ -1,4 +1,4 @@
-import { HandlerMetadata } from "@/types/handler-metadata";
+import { HandlerMetadata } from "@platform/http/types/handler-metadata";
 
 // Function to register Tag Handler routes
 export const registerHandlerRoutes = (

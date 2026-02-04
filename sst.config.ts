@@ -3,16 +3,22 @@
 export default $config({
   app(input) {
     return {
-      name: "paynwise-app",
+      name: "arkytechno-launchpad",
       removal: input?.stage === "production" ? "retain" : "remove",
       protect: ["production"].includes(input?.stage),
       home: "aws",
+      tags: {
+        app: "arkytechno-launchpad",
+        stage: input.stage,
+        managedBy: "sst",
+        team: "backend",
+      },
     };
   },
   async run() {
     const mongoUrl = new sst.Secret("MONGODB_URI");
 
-    const api = new sst.aws.ApiGatewayV1("paynwise-api");
+    const api = new sst.aws.ApiGatewayV1("arkytechno-launchpad-api");
 
     // Import and register Handler routes
     const { initializeLambdas } = await import("@infra/lambda.handlers");

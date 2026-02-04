@@ -1,20 +1,19 @@
 import mongoose, { Schema, Document, Model } from "mongoose";
 
-export interface TagDocument extends Document {
-  tags: string[];
+export interface UserDocument extends Document {
+  name: string;
+  email: string;
+  role: "employee" | "admin";
 }
 
-const TagSchema = new Schema<TagDocument>(
+const UserSchema = new Schema<UserDocument>(
   {
-    tags: {
-      type: [String],
-      required: true,
-      default: [],
-      index: true,
-    },
+    name: { type: String, required: true },
+    email: { type: String, required: true, unique: true },
+    role: { type: String, enum: ["employee", "admin"], default: "employee" },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
-export const TagModel: Model<TagDocument> =
-  mongoose.models.Tag || mongoose.model<TagDocument>("Tag", TagSchema);
+export const UserModel: Model<UserDocument> =
+  mongoose.models.Tag || mongoose.model<UserDocument>("User", UserSchema);
