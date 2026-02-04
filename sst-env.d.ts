@@ -9,7 +9,7 @@ declare module "sst" {
       "type": "sst.sst.Secret"
       "value": string
     }
-    "paynwise-api": {
+    "arkytechno-launchpad-api": {
       "type": "sst.aws.ApiGatewayV1"
       "url": string
     }

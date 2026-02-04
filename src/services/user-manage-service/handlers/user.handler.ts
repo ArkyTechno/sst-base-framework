@@ -12,7 +12,10 @@ const { app, basePath, appHandler, functionMetadata } = HonoApp.getApp({
 const userService = new UserService();
 
 app.get(basePath + "/health", async (c) => {
-  return c.json({ status: "OK", region: process.env.AWS_REGION || "local" });
+  return c.json({
+    status: "Success",
+    region: process.env.AWS_REGION || "local",
+  });
 });
 
 app.get(basePath, async (c) => {

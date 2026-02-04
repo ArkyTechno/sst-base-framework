@@ -62,7 +62,7 @@ export class HonoApp {
           method: c.req.method,
           path: c.req.path,
           status: c.res.status,
-          time: ms,
+          time: `${ms} ms`,
           rid: awsRequestId,
         }),
       );

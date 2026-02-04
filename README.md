@@ -7,6 +7,7 @@ Serverless API built with SST, Hono, and MongoDB.
 - Node.js 18+
 - AWS credentials configured
 - MongoDB connection string for `MONGODB_URI`
+- Recomended to run on linux envs for smooth execution of local sst env.
 
 ## Setup
 
