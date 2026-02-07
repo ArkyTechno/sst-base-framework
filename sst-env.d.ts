@@ -6,18 +6,6 @@
 
 declare module "sst" {
   export interface Resource {
-    "MONGODB_URI": {
-      "type": "sst.sst.Secret"
-      "value": string
-    }
-    "arkytechno-launchpad-api": {
-      "type": "sst.aws.ApiGatewayV1"
-      "url": string
-    }
-    "user-manage-service-user-handler": {
-      "name": string
-      "type": "sst.aws.Function"
-    }
   }
 }
 /// <reference path="sst-env.d.ts" />
