@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const UserSchema = z.object({
-  id: z.string(),
+  id: z.string().optional(),
   name: z.string().min(2),
   email: z.email(),
   role: z.string().refine((val) => ["employee", "admin"].includes(val), {
